@@ -75,37 +75,26 @@ function main()
         pad[1].vy += pad[1].force
     }
 
-    //applies friction
-    pad[0].vy *= fy
-    //player movement
-    pad[0].move();
-
-    //applies friction
-    pad[1].vy *= fy
-    //player movement
-    pad[1].move();
+    for (i=0; i < pad.length; i++)
+    {
+        pad[i].vy *= fy
+        pad[i].move();
+    }
 
     //ball movement
     ball.move()
 
     //pad[0] collision
-    if(pad[0].y < 0+pad[0].h/2)
+    for (i=0; i < pad.length; i++)
     {
-        pad[0].y = 0+pad[0].h/2
-    }
-    if(pad[0].y > c.height-pad[0].h/2)
-    {
-        pad[0].y = c.height-pad[0].h/2
-    }
-
-    //pad[1] collision
-    if(pad[1].y < 0+pad[1].h/2)
-    {
-        pad[1].y = 0+pad[1].h/2
-    }
-    if(pad[1].y > c.height-pad[1].h/2)
-    {
-        pad[1].y = c.height-pad[1].h/2
+        if(pad[i].y < 0+pad[i].h/2)
+        {
+            pad[i].y = 0+pad[i].h/2
+        }
+        if(pad[i].y > c.height-pad[i].h/2)
+        {
+            pad[i].y = c.height-pad[i].h/2
+        }
     }
 
     //ball collision 
@@ -148,7 +137,9 @@ function main()
     }
 
     //draw the objects
-    pad[0].draw()
-    pad[1].draw()
+    for (i=0; i < pad.length; i++)
+    {
+        pad[i].draw();
+    }
     ball.draw()
 }
