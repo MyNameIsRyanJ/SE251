@@ -1,0 +1,3 @@
+var p1 = new User();
+localStorage.setItem(`p1`, p1);
+localStorage.getItem(`p1`)
