@@ -47,6 +47,7 @@
         const startOptions = document.createElement(`div`);
         startOptions.setAttribute(`id`, `start-options`)
         startOptions.style.backgroundColor = `#FF0000`;
+        startOptions.style.opacity =`0`;
         
         const newGameBtn = document.createElement(`button`);
         newGameBtn.setAttribute(`data-load`, `false`);
@@ -76,7 +77,7 @@
             $(`#start`).animate({opacity: 0}, 1000, function(){
                 menus.removeChild(startMenu);
                 menus.appendChild(startOptions);
-                $(`#start-options`).animate({opacity: 1}, 500);
+                $(`#start-options`).animate({opacity: 1}, 2000);
             });
         })
 
